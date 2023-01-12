@@ -17,7 +17,7 @@ public class QueueStack<E> {
             return(in.isEmpty() && out.isEmpty());
         }
 
-    //E enqueue
+    
     //E dequeue
     //E peek
     //toString
