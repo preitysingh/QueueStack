@@ -1,8 +1,5 @@
 
 public class QueueStack<E> {
-    private Stack<E> in;
-    private Stack<E> out;
-
         private Stack<E> in;
         private Stack<E> out;
         private int size = 0;
