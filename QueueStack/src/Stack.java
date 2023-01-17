@@ -18,6 +18,11 @@ public class Stack<E>{
         return size;
     }
 
+    //returns the top element in the stack
+    public StackNode<E> getTop(){
+        return top;
+    }
+
     //returns true if stack is empty
     public boolean isEmpty(){
         return (top == null);
