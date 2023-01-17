@@ -1,4 +1,9 @@
-//Authors: Lilly Phan + Preity Singh
+/**
+ * QueueStack - class that utilizes two stacks to mimic a queue structure
+ * Author: Lilly Phan And Preity Singh
+ * Date: 01/17/2023
+ **/
+
 public class QueueStack<E> {
     private Stack<E> in; //first stack
     private Stack<E> out; //second stack
@@ -47,16 +52,16 @@ public class QueueStack<E> {
         return (out.pop());
     }
 
-    public String toString(){ //typical toString method, checks if stacks are empty
+    public String toString(){ //returns the contents of the queue in a String and "empty" if the queue is empty
         String s = "";
-        if (isEmpty()){
+        if (isEmpty()){ //if empty return "empty"
             return "empty";
-        } else if (out.isEmpty()){
+        } else if (out.isEmpty()){ //move all elements to out stack to get a String with elements from front to back
             for (int i = 0; i < size; i++){
                 out.push(in.pop());
             }
         }
-        StackNode<E> curr = out.getTop();
+        StackNode<E> curr = out.getTop(); //concat the data from the top of the stack down to a String
         for (int i = 0; i < size; i++){
             s = s.concat(curr.getData() + " ");
             curr = curr.getChild();
