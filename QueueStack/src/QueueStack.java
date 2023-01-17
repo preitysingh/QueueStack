@@ -20,12 +20,11 @@ public class QueueStack<E> {
 
     public E peek(){ //returns the top/first element in the queue
         if (out.isEmpty()) {
-            return dequeue();
+            for(int i = 0; i < size; i++){
+                out.push(in.pop()); //...top(most recent) of 'in' stack gets popped & pushed to 'out'
+            }
         }
-        else if (in.isEmpty()){
-            return (E) out.getTop();
-        }
-        return null;
+        return out.peek();
     }
 
     public void enqueue(E element){ //adds element to the bottom of the queue

@@ -2,6 +2,7 @@ public class testDriver {
     public static void main(String[] args) {
         //testing for constructor
         QueueStack<Integer> sq = new QueueStack<>();
+        QueueStack<Integer> sq1 = new QueueStack<>();
         System.out.println(sq.size());
 
         //testing for toString
@@ -12,6 +13,7 @@ public class testDriver {
 
         //testing for enqueue
         sq.enqueue(5);
+        System.out.println("5: " + sq.peek());
         System.out.println("1: " + sq.size());
         System.out.println("5: " + sq);
         sq.enqueue(4);
@@ -22,9 +24,11 @@ public class testDriver {
         System.out.println("first element(5): "+ sq.dequeue());
         System.out.println("2: "+ sq.size());
         System.out.println("second element(4) " + sq.dequeue());
+        System.out.println("null: " + sq1.dequeue());
 
         //testing for peek + size
-        System.out.println(sq.peek());
+        System.out.println("3: " + sq.peek());
+        System.out.println("null: " + sq1.peek());
         System.out.println("1: " + sq.size());
     }
 }
