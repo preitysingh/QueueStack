@@ -15,8 +15,8 @@ public class QueueStack<E> {
     } //returns size of stack
 
     public boolean isEmpty() {
-        return(in.isEmpty() && out.isEmpty());
-    } //returns true if both stacks are empty
+            return(in.isEmpty() && out.isEmpty());
+        } //returns true if both stacks are empty
 
     public E peek(){ //returns the top/first element in the queue
         if (out.isEmpty()) {

@@ -28,6 +28,7 @@ public class Stack<E>{
         return (top == null);
     }
 
+
     //adds a new element to the top of stack
     public void push (E element){
         top = new StackNode<E>(element, top);
