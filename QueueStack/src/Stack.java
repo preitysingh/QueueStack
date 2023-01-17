@@ -23,6 +23,10 @@ public class Stack<E>{
         return (top == null);
     }
 
+    public StackNode<E> getTop(){
+        return top;
+    }
+
     //adds a new element to the top of stack
     public void push (E element){
         top = new StackNode<E>(element, top);
