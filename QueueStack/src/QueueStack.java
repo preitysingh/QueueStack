@@ -15,19 +15,25 @@ public class QueueStack<E> {
     public boolean isEmpty() {
             return(in.isEmpty() && out.isEmpty());
         }
-    public E dequeue(E element)    {
-        E headData = out.peek();
-        out = out.pop();
-        size--;
-        return headData;
-    }
-    public E peek(){
-        if(isEmpty()){
-            return null;
-        }
-        else if (out.isEmpty()) {
 
+    public E dequeue()    {
+        if(out.isEmpty() && !isEmpty()){
+            for(int i = 0; i < size; i++){
+                out.push(in.pop());
+            }
         }
+        size--;
+        return (out.pop());
+    }
+
+    public E peek(){
+        if (out.isEmpty()) {
+            return dequeue();
+        }
+        else if (in.isEmpty()){
+            return (E) out.getTop();
+        }
+        return null;
     }
     public String toString(){
         String s = "";
