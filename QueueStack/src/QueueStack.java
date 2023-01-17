@@ -15,11 +15,36 @@ public class QueueStack<E> {
     public boolean isEmpty() {
             return(in.isEmpty() && out.isEmpty());
         }
+    public E dequeue(E element)    {
+        E headData = out.peek();
+        out = out.pop();
+        size--;
+        return headData;
+    }
+    public E peek(){
+        if(isEmpty()){
+            return null;
+        }
+        else if (out.isEmpty()) {
 
-        
-    //E dequeue
-    //E peek
-    //toString
+        }
+    }
+    public String toString(){
+        String s = "";
+        if (isEmpty()){
+            return "empty";
+        } else if (out.isEmpty()){
+            for (int i = 0; i < size; i++){
+                out.push(in.pop());
+            }
+        }
+        StackNode<E> curr = out.getTop();
+        for (int i = 0; i < size; i++){
+            s = s.concat(curr.getData() + " ");
+            curr = curr.getChild();
+        }
+        return s;
+    }
 
 }
 
