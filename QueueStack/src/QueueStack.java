@@ -16,16 +16,7 @@ public class QueueStack<E> {
             return(in.isEmpty() && out.isEmpty());
         }
 
-    public E dequeue()    {
-        if(out.isEmpty() && !isEmpty()){
-            for(int i = 0; i < size; i++){
-                out.push(in.pop());
-            }
-        }
-        size--;
-        return (out.pop());
-    }
-
+    //peek method
     public E peek(){
         if (out.isEmpty()) {
             return dequeue();
@@ -35,15 +26,7 @@ public class QueueStack<E> {
         }
         return null;
     }
-    public String toString(){
-        String s = "";
-        if (isEmpty()){
-            return "empty";
-        } else if (out.isEmpty()){
-            for (int i = 0; i < size; i++){
-                out.push(in.pop());
-            }
-        }
+
     public void enqueue(E element){
         if (!out.isEmpty()){
             for (int i = 0; i < size; i++){
@@ -54,8 +37,16 @@ public class QueueStack<E> {
         size++; //increment size
     }
 
-    //E dequeue
-    //E peek
+    public E dequeue()    {
+        if(out.isEmpty() && !isEmpty()){
+            for(int i = 0; i < size; i++){
+                out.push(in.pop());
+            }
+        }
+        size--;
+        return (out.pop());
+    }
+
     public String toString(){
        String s = "";
        if (isEmpty()){
@@ -72,6 +63,5 @@ public class QueueStack<E> {
         }
         return s;
     }
-
 }
 
